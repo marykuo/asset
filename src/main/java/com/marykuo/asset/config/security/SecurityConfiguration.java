@@ -63,10 +63,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(request -> {
                     request.requestMatchers(AUTH_WHITELIST).permitAll();
 
-                    request.requestMatchers(HttpMethod.GET, MEMBER).hasRole("ADMIN");
-
-                    request.requestMatchers("/api/v*/resource/admin").hasRole("ADMIN");
-                    request.requestMatchers("/api/v*/resource/user").hasRole("USER");
+                    request.requestMatchers(HttpMethod.GET, ROOT_API + "/v*" + MEMBER).hasRole("ADMIN");
 
                     request.anyRequest().authenticated();
                 })

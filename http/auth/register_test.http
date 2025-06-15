@@ -57,4 +57,3 @@ Content-Type: application/json
         client.assert(response.body.message === "Email already registered.", "message");
     });
 %}
-
