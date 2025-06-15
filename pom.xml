@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.marykuo.demo</groupId>
-    <artifactId>spring-security</artifactId>
+    <artifactId>asset</artifactId>
     <version>0.0.1</version>
 
     <properties>
