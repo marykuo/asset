@@ -19,38 +19,8 @@ Content-Type: application/json
     });
 %}
 
-### public resource
-GET {{host}}/public/v1/resource
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-> {%
-    client.test("Response", function () {
-        client.assert(response.status === 200, "status");
-        client.assert(response.body.result === true, "result");
-        client.assert(response.body.message === "success", "message");
-        client.assert(response.body.data.id === 1, "data.id");
-        client.assert(response.body.data.name === "Here is your public resource", "data.name");
-    });
-%}
-
-### authenticated resource
-GET {{host}}/api/v1/resource
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-> {%
-    client.test("Response", function () {
-        client.assert(response.status === 200, "status");
-        client.assert(response.body.result === true, "result");
-        client.assert(response.body.message === "success", "message");
-        client.assert(response.body.data.id === 2, "data.id");
-        client.assert(response.body.data.name === "Here is an private resource", "data.name");
-    });
-%}
-
-### admin resource
-GET {{host}}/api/v1/resource/admin
+### query pagination member
+GET {{host}}/api/v1/member
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -59,18 +29,5 @@ Content-Type: application/json
         client.assert(response.status === 403, "status");
         client.assert(response.body.result === false, "result");
         client.assert(response.body.message === "無權使用此功能", "message");
-    });
-%}
-
-### user resource
-GET {{host}}/api/v1/resource/user
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-> {%
-    client.test("Response", function () {
-        client.assert(response.status === 200, "status");
-        client.assert(response.body.data.id === 4, "data.id");
-        client.assert(response.body.data.name === "Here is your private resource", "data.name");
     });
 %}
