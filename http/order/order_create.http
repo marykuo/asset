@@ -1,0 +1,24 @@
+### create
+POST {{host}}/api/v1/order
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "platformId": 4,
+  "merchantId": 1,
+  "invoiceNumber": "NU82543624",
+  "dateTime": 1746403200000,
+  "amount": 1,
+  "amountInCurrency": 1,
+  "currency": "TWD",
+  "exchangeRate": 1
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}

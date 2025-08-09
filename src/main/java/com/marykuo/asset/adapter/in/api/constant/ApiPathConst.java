@@ -13,6 +13,9 @@ public class ApiPathConst {
     public static final String MEMBER = "/member";
     public static final String MEMBER_SINGLE = "/member/{memberId}";
 
+    public static final String ORDER = "/order";
+    public static final String ORDER_SINGLE = "/order/{orderId}";
+
     public static final String PLATFORM = "/platform";
     public static final String PLATFORM_SINGLE = "/platform/{platformId}";
 
