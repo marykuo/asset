@@ -1,0 +1,72 @@
+### create
+POST {{host}}/api/v1/platform
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "實體店家"
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
+
+### create
+POST {{host}}/api/v1/platform
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "店家官網"
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
+
+### create
+POST {{host}}/api/v1/platform
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "蝦皮"
+}
+
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
+
+### create
+POST {{host}}/api/v1/platform
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "PCHome"
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
