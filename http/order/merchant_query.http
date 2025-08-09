@@ -1,0 +1,13 @@
+### query
+GET {{host}}/api/v1/merchant
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
