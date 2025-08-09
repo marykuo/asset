@@ -1,0 +1,35 @@
+### create
+POST {{host}}/api/v1/merchant
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "PCHome"
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
+
+### create
+POST {{host}}/api/v1/merchant
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "湯湯水水小吃店"
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}

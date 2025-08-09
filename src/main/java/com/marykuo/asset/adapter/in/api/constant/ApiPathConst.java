@@ -15,4 +15,7 @@ public class ApiPathConst {
 
     public static final String PLATFORM = "/platform";
     public static final String PLATFORM_SINGLE = "/platform/{platformId}";
+
+    public static final String MERCHANT = "/merchant";
+    public static final String MERCHANT_SINGLE = "/merchant/{merchantId}";
 }
