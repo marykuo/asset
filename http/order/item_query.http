@@ -1,0 +1,14 @@
+### query
+GET {{host}}/api/v1/order/1/item
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### query
+GET {{host}}/api/v1/item
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### query
+GET {{host}}/api/v1/item/1
+Authorization: Bearer {{token}}
+Content-Type: application/json

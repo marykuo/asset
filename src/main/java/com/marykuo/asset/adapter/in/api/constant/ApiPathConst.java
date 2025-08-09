@@ -15,6 +15,10 @@ public class ApiPathConst {
 
     public static final String ORDER = "/order";
     public static final String ORDER_SINGLE = "/order/{orderId}";
+    public static final String ORDER_ITEM = "/order/{orderId}/item";
+
+    public static final String ITEM = "/item";
+    public static final String ITEM_SINGLE = "/item/{itemId}";
 
     public static final String PLATFORM = "/platform";
     public static final String PLATFORM_SINGLE = "/platform/{platformId}";

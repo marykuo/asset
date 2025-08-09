@@ -1,0 +1,26 @@
+### create
+POST {{host}}/api/v1/item
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "productId": null,
+  "sequence": 1,
+  "name": "原子筆(藍)",
+  "quantity": 10,
+  "unit": "枝",
+  "unitPrice": 5,
+  "amount": 50,
+  "relateNumber": null,
+  "remark": null
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}
