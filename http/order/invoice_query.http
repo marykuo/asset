@@ -1,0 +1,9 @@
+### query
+GET {{host}}/api/v1/invoice
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### query
+GET {{host}}/api/v1/invoice/NU82543624
+Authorization: Bearer {{token}}
+Content-Type: application/json

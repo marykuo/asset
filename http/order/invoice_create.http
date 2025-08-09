@@ -1,0 +1,28 @@
+### create
+POST {{host}}/api/v1/invoice
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "invoiceNumber": "NU82543624",
+  "invoiceDateTime": 1746403200000,
+  "sellerIdentifier": "16606102",
+  "sellerName": "網路家庭國際資訊股份有限公司",
+  "printMark": "N",
+  "donateMark": "N",
+  "npoBan": null,
+  "carrierType": "3J0002",
+  "carrierId": "/03M+.6Q",
+  "amount": 1,
+  "currency": "TWD",
+  "status": "CREATED"
+}
+
+> {%
+    client.test("Response", function () {
+        client.assert(response.status === 200, "status");
+        client.assert(response.headers.valueOf("content-type") === "application/json", "content-type");
+        client.assert(response.body.result === true, "result");
+        client.assert(response.body.message === "success", "message");
+    });
+%}

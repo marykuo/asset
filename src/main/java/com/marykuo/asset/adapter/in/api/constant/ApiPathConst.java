@@ -18,4 +18,7 @@ public class ApiPathConst {
 
     public static final String MERCHANT = "/merchant";
     public static final String MERCHANT_SINGLE = "/merchant/{merchantId}";
+
+    public static final String INVOICE = "/invoice";
+    public static final String INVOICE_SINGLE = "/invoice/{invoiceNumber}";
 }
